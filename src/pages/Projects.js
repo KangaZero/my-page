@@ -1,30 +1,4 @@
-// import React from 'react';
-// import styled from 'styled-components';
 
-// // components
-// import ProjectCard from '../components/ProjectCard';
-
-
-
-// function Projects() {
-//   return (
-//     <>
-//       {cards.map(card => (
-//         <ProjectCard
-//           key={card.id}
-//           id={card.id}
-//           title={card.title}
-//           image={card.image}
-//           content={card.content}
-//         />
-//       ))}
-//     </>
-//   )
-//       }
-
-// export default Projects;
-
-// Alternative
 import React from 'react';
 import styled from 'styled-components';
 
@@ -52,21 +26,56 @@ const cards = [
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       date: '1/1/1970'
     },
+    {
+      id: 4,
+      title: 'Card 4',
+      image: '/card4.jpg',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      date: '1/1/1970'
+    },
+    {
+      id: 5,
+      title: 'Card 5',
+      image: '/card4.jpg',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      date: '1/1/1970'
+    },
+    {
+      id: 6,
+      title: 'Card 6',
+      image: '/card4.jpg',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      date: '1/1/1970'
+    },
   ];
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  height: 100vh;
+  margin: 1.5rem 2rem;
+  padding: 1rem 1rem;
+  border: 1px solid;
+`;
 
 function Projects() {
   return (
-    <div>
+    // className provided to center the Container div using bootstrap's CSS
+    <CardContainer className ="mx-auto">
     {cards.map(card => (
-      <Card
+      <Card 
         key={card.id}
         image={card.image}
         title={card.title}
         text={card.text}
         date={card.date}
+        // style={{ width: '30%', padding: '1rem' }}
       />
     ))}
-  </div>
+  </CardContainer>
   )
       }
 

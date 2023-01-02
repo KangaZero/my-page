@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+
 
 class CardHeader extends React.Component {
   render() {
@@ -28,7 +30,7 @@ class CardBody extends React.Component {
   render() {
     const { title, text, date } = this.props;
     return (
-      <div className="card-body">
+      <div className="card-body py-3">
         <p className="date">{date}</p>
         
         <h2>{title}</h2>
@@ -41,14 +43,22 @@ class CardBody extends React.Component {
   }
 }
 
+const CardWrapper = styled.article`
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  width: 30%;
+  margin: auto;
+`
+
 class Card extends React.Component {
   render() {
     const { image, title, text, date } = this.props;
     return (
-      <article className="card">
+      <CardWrapper className="card m-3">
         <CardHeader image={image}/>
         <CardBody title={title} text={text} date={date}/>
-      </article>
+      </CardWrapper>
     )
   }
 }

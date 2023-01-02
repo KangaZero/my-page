@@ -1,7 +1,6 @@
 
 import './App.css';
 import React from 'react';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Components
@@ -20,10 +19,8 @@ import Projects from './pages/Projects';
 function App() {
   return (
     <Router>
-     <div>
           {/* <Header /> */}
           <Navbar />
-          <div className="container">
             <Routes>
             {/* <Route 
                 path="/"
@@ -46,9 +43,8 @@ function App() {
                 element={<Resume />}
               /> */}
             </Routes>
-          </div> 
+          
           {/* <Footer /> */}
-   </div>
    </Router>
   );
 }
