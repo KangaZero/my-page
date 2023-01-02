@@ -18,10 +18,13 @@ class CardHeader extends React.Component {
 
 class Button extends React.Component {
   render() {
-    const { projectLink, githubLink } = this.props;
+    const { projectLink } = this.props;
     return (
       <div>
-      <button className="button button-primary">
+      <button 
+        className="button button-primary"
+        onClick={() => window.open(projectLink, '_blank')}
+        >
         <i className="fa fa-chevron-right"></i> Link
       </button>
       </div>
@@ -36,14 +39,14 @@ width: 50%;
 
 class CardBody extends React.Component {
   render() {
-    const { text, date, image } = this.props;
+    const { text, date, image, projectLink } = this.props;
     return (
       <div className="card-body py-3">
         <p className="date">{date}</p>
         <CardBodyImage src={image} alt={text}></CardBodyImage>
         <p className="body-content">{text}</p>
         
-        <Button />
+        <Button projectLink={projectLink}/>
       </div>
     )
   }
@@ -60,11 +63,11 @@ const CardWrapper = styled.article`
 
 class Card extends React.Component {
   render() {
-    const { image, title, text, date } = this.props;
+    const { image, title, text, date, projectLink } = this.props;
     return (
       <CardWrapper className="card">
         <CardHeader title={title} image={image}/>
-        <CardBody title={title} text={text} date={date} image={image}/>
+        <CardBody title={title} text={text} date={date} image={image} projectLink={projectLink}/>
       </CardWrapper>
     )
   }

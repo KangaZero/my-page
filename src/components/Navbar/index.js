@@ -4,8 +4,11 @@ import { useState } from 'react';
 import { FaMoon, FaLightbulb} from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 
+// logo
+import  logo  from '../../images/logo.png';
 
-export default function Navbar () {
+
+const Navbar = () => {
     const location = useLocation();
     const [theme, setTheme] = useState('light');
 
@@ -81,7 +84,7 @@ export default function Navbar () {
 return (
     <>
         <NavbarContainer>
-            <img className="mx-4" src="/logo.png" alt="Logo" />
+            <img className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
             <NavLinks>
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
@@ -96,3 +99,5 @@ return (
     </>
 )
 };
+
+export default Navbar;
