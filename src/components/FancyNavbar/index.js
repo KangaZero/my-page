@@ -1,46 +1,45 @@
+import React, { useReducer } from 'react';
+
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useContext } from 'react';
-import { ThemeContext } from '../../utils/ThemeContext';
+import { useState } from 'react';
 import { FaMoon, FaLightbulb} from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
+
+import { useTheme } from '../../utils/ThemeContext';
+import { reducer } from '../../utils/reducers';
+import { TOGGLE_THEME } from '../../utils/actions';
 
 // logo
 import  logo  from '../../images/logo.png';
 
 
-const Navbar = () => {
+const FancyNavbar = () => {
     const location = useLocation();
-    const { theme, setTheme } = useContext(ThemeContext);
+    // const [theme, setTheme] = useState('light');
+  const initialState = useTheme();
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-    const lightMode = {
-        backgroundColor: '#333',
+
+    const themeStyles = {
+        background: state.darkTheme
+        ? '#333'
+        : '#fff',
         color: '#D3D3D3'
     }
 
-    const darkMode = {
-        backgroundColor: '#fff',
-        color: '#333'
-    }
 
-    const toggleTheme = () => {
-        if (theme === 'light') {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
-    }
 
     const NavbarContainer = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: ${theme === 'light' ? lightMode.backgroundColor : darkMode.backgroundColor};
-        color: ${theme === 'light' ? lightMode.color : darkMode.color};
+        background-color: themeStyles.background;
+        color: themeStyles.color;
         width: 100%;
        
         a {
-            color: 	${theme === 'light' ? lightMode.color : darkMode.color};
+            color: 	themeStyles.color;
             font-family: 'calibri';
             font-size: 1.2rem;
         }
@@ -93,12 +92,14 @@ return (
                 <Link to="/projects">Projects</Link>
                 <Link to="/contacts">Contacts</Link>
             </NavLinks>
-        <button className="mx-4" onClick={toggleTheme}>
-            {theme === 'light' ? <StyledLightbulb  />: <FaMoon /> }
+        <button className="mx-4" onClick={() =>
+          dispatch({ type: TOGGLE_THEME, payload: state.darkTheme })
+        }>
+            {state.darkTheme ? <StyledLightbulb  />: <FaMoon /> }
         </button>
         </NavbarContainer>
     </>
 )
 };
 
-export default Navbar;
+export default FancyNavbar;
