@@ -15,12 +15,6 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
 
-// const sections = [
-//   { title: 'Home', url: '/' },
-//   { title: 'Projects', url: 'Projects' },
-//   { title: 'Projects', url: 'Projects' },
-//   { title: 'About', url: 'About' },
-// ];
 
 function App() {
   return (
