@@ -58,6 +58,10 @@ const CardWrapper = styled.article`
     width: 100%;
     margin: 5%;
   }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 40%;
+    margin: 5%;
+  }
 `
 
 class Card extends React.Component {
