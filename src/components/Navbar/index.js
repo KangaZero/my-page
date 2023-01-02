@@ -38,6 +38,11 @@ const Navbar = () => {
         background-color: ${theme === 'light' ? lightMode.backgroundColor : darkMode.backgroundColor};
         color: ${theme === 'light' ? lightMode.color : darkMode.color};
         width: 100%;
+
+        @media only screen and (max-width: 768px) {
+            flex-direction:column;
+            justify-content: start;
+        }
        
         a {
             color: 	${theme === 'light' ? lightMode.color : darkMode.color};
@@ -75,15 +80,32 @@ const Navbar = () => {
     a[href='${location.pathname}'] {
       font-weight: bold;
     }
-        }
+        
 `
     // Styles the lightbulb fa-icon from it's default black colour to white
     const StyledLightbulb = styled(FaLightbulb)`
     color: white;
+    @media only screen and (max-width: 768px) {
+            height: 50px;
+            width: 50px;
+        }
+    `;
+
+    const StyledMoon = styled(FaMoon)`
+    @media only screen and (max-width: 768px) {
+            height: 50px;
+            width: 50px;
+        }
+    `;
+
+    const ThemeButton = styled.button`
+          @media only screen and (max-width: 768px) {
+            height: 64px;
+            width: 64px;
+        }
     `;
 
 return (
-    <>
         <NavbarContainer>
             <img className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
             <NavLinks>
@@ -93,11 +115,10 @@ return (
                 <Link to="/projects">Projects</Link>
                 <Link to="/contacts">Contacts</Link>
             </NavLinks>
-        <button className="mx-4" onClick={toggleTheme}>
-            {theme === 'light' ? <StyledLightbulb  />: <FaMoon /> }
-        </button>
+        <ThemeButton className="mx-4" onClick={toggleTheme}>
+            {theme === 'light' ? <StyledLightbulb  />: <StyledMoon /> }
+        </ThemeButton>
         </NavbarContainer>
-    </>
 )
 };
 

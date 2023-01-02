@@ -13,26 +13,32 @@ class CardHeader extends React.Component {
   }
 }
 
+const CardButton = styled.button`
+  backgroundColor:'#555';
+  color:'#D3D3D3';
+`;
+
 class Button extends React.Component {
   render() {
     const { projectLink } = this.props;
     return (
       <div>
-      <button 
+      <CardButton 
         className="button button-primary"
         onClick={() => window.open(projectLink, '_blank')}
         >
         <i className="fa fa-chevron-right"></i> Link
-      </button>
+      </CardButton>
       </div>
     )
   }
 }
 
 const CardBodyImage = styled.img`
-height: 50%;
-width: 50%;
-`
+  height: 50%;
+  width: 50%;
+`;
+
 
 class CardBody extends React.Component {
   render() {
