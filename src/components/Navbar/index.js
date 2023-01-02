@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
-export const Navbar = () => {
+export default function Navbar () {
     const [theme, setTheme] = useState('light');
 
     const lightMode = {
@@ -37,10 +37,10 @@ export const Navbar = () => {
                 <Link to="/resume">Resume</Link>
                 <Link to="/projects">Projects</Link>
                 <Link to="/contacts">Contacts</Link>
-            </NavbarContainer>
             <button onClick={toggleTheme}>
                 {theme === 'light' ? <FaMoon /> : <FaSun />}
             </button>
+            </NavbarContainer>
         </>
     )
 };

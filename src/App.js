@@ -5,25 +5,25 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Components
-import Header from './components/Header';
-import Footer from './components/Footer';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 
 // Pages
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Resume from './pages/Resume';
+// import About from './pages/About';
+// import Contact from './pages/Contact';
+// import Home from './pages/Home';
+// import Projects from './pages/Projects';
+// import Resume from './pages/Resume';
 
 
 function App() {
   return (
     <Router>
      <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          {/* <Header /> */}
           <Navbar />
-          <div className="container">
+          {/* <div className="container">
             <Routes>
             <Route 
                 path="/"
@@ -46,8 +46,8 @@ function App() {
                 element={<Resume />}
               />
             </Routes>
-          </div>
-          <Footer />
+          </div> */}
+          {/* <Footer /> */}
    </div>
    </Router>
   );
