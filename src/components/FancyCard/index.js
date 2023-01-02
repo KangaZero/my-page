@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 class CardHeader extends React.Component {
   render() {
     const { image, title } = this.props;
-    var style = { 
-        backgroundImage: 'url(' + image + ')',
-    };
+
     return (
-      <header style={style} id={image} className="card-header">
+      <header style={{backgroundColor:'#888'}} id={image} className="card-header">
         <h4 className="card-header--title">{title}</h4>
       </header>
     )
@@ -41,7 +38,7 @@ class CardBody extends React.Component {
   render() {
     const { text, date, image, projectLink } = this.props;
     return (
-      <div className="card-body py-3">
+      <div className="card-body py-1 mx-1">
         <p className="date">{date}</p>
         <CardBodyImage src={image} alt={text}></CardBodyImage>
         <p className="body-content">{text}</p>
@@ -53,11 +50,13 @@ class CardBody extends React.Component {
 }
 
 const CardWrapper = styled.article`
-  height: 40%;
+  height: 45%;
   width: 30%; 
+  overflow: auto;
   margin: auto;
   @media only screen and (max-width: 768px) {
     width: 100%;
+    margin: 5%;
   }
 `
 
