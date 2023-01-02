@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useState } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { FaMoon, FaLightbulb} from 'react-icons/fa';
+import { useLocation } from 'react-router-dom';
+
 
 export default function Navbar () {
+    const location = useLocation();
     const [theme, setTheme] = useState('light');
 
     const lightMode = {
@@ -31,21 +34,49 @@ export default function Navbar () {
         background-color: ${theme === 'light' ? lightMode.backgroundColor : darkMode.backgroundColor};
         color: ${theme === 'light' ? lightMode.color : darkMode.color};
         width: 100%;
-
+       
         a {
             color: 	${theme === 'light' ? lightMode.color : darkMode.color};
+            font-family: 'calibri';
+            font-size: 1.2rem;
+        }
+
+        button {
+            border-radius: 20%;
+            padding: 2px 5px;  
+            border: none;
+            background: none;
+        }
+
+        button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        button:active {
+            background-color: #333;
+            color: #fff;
         }
 `
-const NavLinks = styled.div`
-    display: flex;
-    align-items: center;
-    margin: 1rem 0.5rem;
+        const NavLinks = styled.div`
+            display: flex;
+            align-items: center;
+            margin: 1rem 0.5rem;
 
     a {
             margin: 0 1rem;
             text-decoration: none;
+    }
+
+    a[href='${location.pathname}'] {
+      font-weight: bold;
+    }
         }
 `
+    // Styles the lightbulb fa-icon from it's default black colour to white
+    const StyledLightbulb = styled(FaLightbulb)`
+    color: white;
+    `;
 
 return (
     <>
@@ -59,7 +90,7 @@ return (
                 <Link to="/contacts">Contacts</Link>
             </NavLinks>
         <button className="mx-4" onClick={toggleTheme}>
-            {theme === 'light' ? <FaMoon /> : <FaSun />}
+            {theme === 'light' ? <StyledLightbulb  />: <FaMoon /> }
         </button>
         </NavbarContainer>
     </>
