@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { useContext } from 'react';
+import { ThemeContext } from '../utils/ThemeContext';
 // components
 import { Card } from '../components/FancyCard';
 
@@ -64,7 +66,22 @@ const cards = [
     },
   ];
 
-const CardContainer = styled.div`
+
+function Projects() {
+
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  const lightMode = {
+    backgroundColor: '#333',
+    color: '#D3D3D3'
+}
+
+const darkMode = {
+    backgroundColor: '#fff',
+    color: '#333'
+}
+
+  const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -75,9 +92,11 @@ const CardContainer = styled.div`
   padding: 1rem 1rem;
   ${'' /* TODO remove border once done */}
   border: 1px solid;
+  background-color: ${theme === 'light' ? lightMode.backgroundColor : darkMode.backgroundColor};
+  color: ${theme === 'light' ? lightMode.color : darkMode.color};
 `;
 
-function Projects() {
+
   return (
     // className provided to center the Container div using bootstrap's CSS
     <CardContainer className ="mx-auto">
