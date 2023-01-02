@@ -2,20 +2,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// components
 import { Card } from '../components/FancyCard';
+
+// images
+import holidayCalender from '../images/holidayCalendar.png';
+import purrfection from '../images/purrfection.png';
 
 const cards = [
     {
       id: 1,
       title: 'Card 1',
-      image: '/card1.jpg',
+      image: holidayCalender,
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       date: '1/1/1970'
     },
     {
       id: 2,
       title: 'Card 2',
-      image: '/card2.jpg',
+      image: purrfection,
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       date: '1/1/1970'
     },
@@ -54,10 +59,11 @@ const CardContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   height: 100vh;
   margin: 1.5rem 2rem;
   padding: 1rem 1rem;
+  ${'' /* TODO remove border once done */}
   border: 1px solid;
 `;
 
