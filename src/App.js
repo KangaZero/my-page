@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Components
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 // Pages
 import About from './pages/About';
@@ -21,6 +22,7 @@ function App() {
     <Router>
      <div className="flex-column justify-flex-start min-100-vh">
           <Header />
+          <Navbar />
           <div className="container">
             <Routes>
             <Route 
