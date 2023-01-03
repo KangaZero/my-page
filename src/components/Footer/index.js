@@ -67,7 +67,7 @@ const darkMode = {
     ${props =>
       props.github &&
       css`
-        color: #333;
+        color: ${theme === 'light' ? '#888' : '#555'};
       `}
 
     ${props =>
@@ -81,6 +81,16 @@ const darkMode = {
       css`
         color: #0077b5;
       `}
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+
+  &:active {
+    transform: scale(1);
+    transition: transform 0.2s;
+  }
   `;
 
   return (
@@ -96,7 +106,7 @@ const darkMode = {
           <Icon icon={faLinkedin} linkedin />
         </a>
       </div>
-      <div className="copyright">&copy;  {new Date().getFullYear()} Samuel Wai Weng Yong</div>
+      <div className="copyright">&copy;  {new Date().getFullYear()} KangaZero</div>
   </FooterContainer>
 );
 };

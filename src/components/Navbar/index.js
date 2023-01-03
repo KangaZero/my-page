@@ -16,12 +16,16 @@ const Navbar = () => {
 
     const lightMode = {
         backgroundColor: '#333',
-        color: '#D3D3D3'
+        hoverBackground: '#555',
+        color: '#D3D3D3',
+        hoverColor: '#E3D3D3'
     }
 
     const darkMode = {
         backgroundColor: '#d8e8e6',
-        color: '#333'
+        hoverBackground: '#f9f9ff',
+        color: '#333',
+        hoverColor: '#111'
     }
 
     const toggleTheme = () => {
@@ -44,11 +48,20 @@ const Navbar = () => {
             flex-direction:column;
             justify-content: start;
         }
+         
+         &:hover {
+            background-color: ${theme === 'light' ? lightMode.hoverBackground : darkMode.hoverBackground};
+        }
+
        
         a {
             color: 	${theme === 'light' ? lightMode.color : darkMode.color};
             font-family: 'calibri';
             font-size: 1.2rem;
+        }
+        
+        & a:hover {
+            color:  ${theme === 'light' ? lightMode.hoverColor : darkMode.hoverColor};
         }
 
         button {
