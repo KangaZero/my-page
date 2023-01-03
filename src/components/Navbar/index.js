@@ -20,7 +20,7 @@ const Navbar = () => {
     }
 
     const darkMode = {
-        backgroundColor: '#fff',
+        backgroundColor: '#d8e8e6',
         color: '#333'
     }
 

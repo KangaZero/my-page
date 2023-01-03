@@ -5,7 +5,9 @@ import { ThemeContext } from '../utils/ThemeContext';
 
 import Typed from 'typed.js';
 
-import darkBg from '../images/dark-background.png';
+// import darkBg from '../images/dark-background.png';
+import darkBgV2 from '../images/dark-backgroundV2.png';
+import lightBg from '../images/light-background.png';
 
 function Home () {
 // For dark/light mode
@@ -38,10 +40,20 @@ const Stars = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(${darkBg});
+  background-image: url(${darkBgV2});
   z-index: -1;
 `;
-// TODO make one for light mode
+
+const Sky = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(${lightBg});
+  z-index: -1;
+`;
+
 
 const Content = styled.div`
   position: absolute;
@@ -66,6 +78,7 @@ const Text = styled.p`
   return (
     <Container>
     {theme === 'light' && <Stars />}
+    {theme !== 'light' && <Sky />}
       <Content>
         <Title className="title"></Title>
         <Text className="text">

@@ -10,6 +10,8 @@ import { Card } from '../components/FancyCard';
 // images
 import holidayCalendar from '../images/holidayCalendar.png';
 import purrfection from '../images/purrfection.png';
+import darkBgV2 from '../images/dark-backgroundV2.png';
+import lightBg from '../images/light-background.png';
 
 const cards = [
     {
@@ -71,15 +73,15 @@ function Projects() {
 
   const { theme, setTheme } = useContext(ThemeContext);
 
-const lightMode = {
-    backgroundColor: '#333',
+  const darkMode = {
+    backgroundColor: `#12130c`,
     color: '#D3D3D3'
-}
-
-const darkMode = {
-    backgroundColor: '#fff',
+  };
+  
+  const lightMode = {
+    backgroundColor: `#cbd5e4`,
     color: '#333'
-}
+  };
 
   const CardContainer = styled.div`
   display: flex;
@@ -90,14 +92,13 @@ const darkMode = {
   justify-text: space-between;
   width: 100%;
   height: 100vh;
-  margin: 1.5rem 2rem;
+  margin: 0rem 2rem 1.5rem 2rem;
   padding: 1rem 1rem;
   ${'' /* TODO remove border once done */}
   border: 1px solid;
-  background-color: ${theme === 'light' ? lightMode.backgroundColor : darkMode.backgroundColor};
-  color: ${theme === 'light' ? lightMode.color : darkMode.color};
+  background-color: ${theme === 'light' ? darkMode.backgroundColor : lightMode.backgroundColor};
+  color: ${theme === 'light' ? darkMode.color : lightMode.color};
 `;
-
 
   return (
     // className provided to center the Container div using bootstrap's CSS
