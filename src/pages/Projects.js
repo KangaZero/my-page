@@ -5,71 +5,70 @@ import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from '../utils/ThemeContext';
 // components
-import { Card } from '../components/FancyCard';
+import ProjectCard  from '../components/ProjectCard';
 
 // images
 import holidayCalendar from '../images/holiday-calendar.png';
 import purrfection from '../images/purrfection.png';
-import darkBgV2 from '../images/dark-backgroundV2.png';
-import lightBg from '../images/light-background.png';
+import teamProfileGenerator from '../images/team-profile-generator.png';
+import weatherDashboard from '../images/weather-dashboard.png';
+import codingQuiz from '../images/coding-quiz.png';
+import workDayScheduler from '../images/work-day-scheduler.png';
+
 
 const cards = [
     {
       id: 1,
       title: 'Holiday Calendar',
       image: holidayCalendar,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
+      text: 'Wiki facts about holidays you pick from our calendar',
+      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/',
+      liveLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
     },
     {
       id: 2,
       title: 'Pet Store',
       image: purrfection,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
+      text: `Looking or selling your pet? It's all here!`,
+      projectLink: 'https://github.com/KangaZero/purrfection',
+      liveLink: 'https://purrfection-pet-store.herokuapp.com/'
     },
     {
       id: 3,
-      title: 'Card 3',
-      image: '/card3.jpg',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
-
+      title: 'Profile Generator',
+      image: teamProfileGenerator,
+      text: `Create your teams' profile cards with KangaZero's inbuilt CMS`,
+      projectLink: 'https://github.com/KangaZero/Team_Profile_Generator',
+      liveLink: 'https://kangazero.github.io/Team_Profile_Generator/'
     },
     {
       id: 4,
-      title: 'Card 4',
-      image: '/card4.jpg',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
-
+      title: 'Weather Dashboard',
+      image: weatherDashboard,
+      text: 'Want to know the weather for your city? Look no more',
+      projectLink: 'https://github.com/KangaZero/kangazero.weatherdashboard.io',
+      liveLink: 'https://kangazero.github.io/kangazero.weatherdashboard.io/'
     },
     {
       id: 5,
-      title: 'Card 5',
-      image: '/card4.jpg',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
-
+      title: 'Coding Quiz',
+      image: codingQuiz,
+      text: 'Brush up on your coding knowledge',
+      projectLink: 'https://github.com/KangaZero/kangazero.Coding_quiz.io',
+      liveLink: 'https://kangazero.github.io/kangazero.Coding_quiz.io/'
     },
     {
       id: 6,
-      title: 'Card 6',
-      image: '/card4.jpg',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
-
+      title: 'Work Day Scheduler',
+      image: workDayScheduler,
+      text: 'The lovely 9 to 5 to plan your totally wanting to do stuff',
+      projectLink: 'https://github.com/KangaZero/kangazero.scheduler.io',
+      liveLink: 'https://kangazero.github.io/kangazero.scheduler.io/'
     },
   ];
 
 
-function Projects() {
+const TestProjects = () => {
 
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -102,17 +101,17 @@ function Projects() {
     // className provided to center the Container div using bootstrap's CSS
     <CardContainer className ="mx-auto">
     {cards.map(card => (
-      <Card 
+      <ProjectCard 
         key={card.id}
         image={card.image}
         title={card.title}
         text={card.text}
-        date={card.date}
         projectLink={card.projectLink}
+        liveLink={card.liveLink}
       />
     ))}
   </CardContainer>
   )
       }
 
-export default Projects;
+export default TestProjects;

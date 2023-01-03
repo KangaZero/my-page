@@ -21,53 +21,49 @@ const cards = [
       id: 1,
       title: 'Holiday Calendar',
       image: holidayCalendar,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
+      text: 'Wiki facts about holidays you pick from our calendar',
+      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/',
+      liveLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
     },
     {
       id: 2,
       title: 'Pet Store',
       image: purrfection,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
+      text: `Looking or selling your pet? It's all here!`,
+      projectLink: 'https://github.com/KangaZero/purrfection',
+      liveLink: 'https://purrfection-pet-store.herokuapp.com/'
     },
     {
       id: 3,
       title: 'Profile Generator',
       image: teamProfileGenerator,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
-
+      text: `Create your teams' profile cards with KangaZero's inbuilt CMS`,
+      projectLink: 'https://github.com/KangaZero/Team_Profile_Generator',
+      liveLink: 'https://kangazero.github.io/Team_Profile_Generator/'
     },
     {
       id: 4,
       title: 'Weather Dashboard',
       image: weatherDashboard,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
-
+      text: 'Want to know the weather for your city? Look no more',
+      projectLink: 'https://github.com/KangaZero/kangazero.weatherdashboard.io',
+      liveLink: 'https://kangazero.github.io/kangazero.weatherdashboard.io/'
     },
     {
       id: 5,
       title: 'Coding Quiz',
       image: codingQuiz,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
-
+      text: 'Brush up on your coding knowledge',
+      projectLink: 'https://github.com/KangaZero/kangazero.Coding_quiz.io',
+      liveLink: 'https://kangazero.github.io/kangazero.Coding_quiz.io/'
     },
     {
       id: 6,
       title: 'Work Day Scheduler',
       image: workDayScheduler,
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      date: '1/1/1970',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
-
+      text: 'The lovely 9 to 5 to plan your totally wanting to do stuff',
+      projectLink: 'https://github.com/KangaZero/kangazero.scheduler.io',
+      liveLink: 'https://kangazero.github.io/kangazero.scheduler.io/'
     },
   ];
 
@@ -111,6 +107,7 @@ const TestProjects = () => {
         title={card.title}
         text={card.text}
         projectLink={card.projectLink}
+        liveLink={card.liveLink}
       />
     ))}
   </CardContainer>

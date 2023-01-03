@@ -137,10 +137,10 @@ return (
       <CardTitle>{title}</CardTitle>
       <CardText>{text}</CardText>
       <CardIcons>
-        <a href={projectLink}>
+        <a href={projectLink} target='_blank' rel='noopener noreferrer'>
           <Icon icon={faGithub} github />
         </a>
-        <a href={liveLink}>
+        <a href={liveLink} target='_blank' rel='noopener noreferrer'>
         <Icon icon={faNpm} github />
         </a>
       </CardIcons>

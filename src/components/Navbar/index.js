@@ -150,8 +150,6 @@ const NavbarImage = styled.img`
                 <Link to="/about">About</Link>
                 <Link to="/resume">Resume</Link>
                 <Link to="/projects">Projects</Link>
-                {/* Delete once done */}
-                <Link to="/testprojects">TestProjects</Link>
                 <Link to="/contacts">Contacts</Link>
             </NavLinks>
         <ThemeButton className="mx-4" onClick={toggleTheme}>
