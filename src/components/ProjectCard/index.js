@@ -1,68 +1,56 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 const CardContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  width: 100%;
-  height: 100%;
-  ${'' /* KEEP THIS CONSISTENT */}
-  margin-top: 1.5rem;
-  border: 1px solid;
-`; 
-
-const CardLink = styled.a`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
-`;
-
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-`;
-
-const CardHeader = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
+
+const CardImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 `;
 
 const CardBody = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
   padding: 1rem;
-  background-color: #fff;
-  color: #333;
 `;
 
-function ProjectCard(props) {
-    return (
-      <CardContainer>
-        <CardLink key={props.id} href={`/card/${props.id}`}>
-          <Card direction="row">
-            <CardHeader>
-              <h3>{props.title}</h3>
-              <button>Close</button>
-            </CardHeader>
-            <CardBody>
-              <img src={props.image} alt={props.title} />
-              <p>{props.content}</p>
-            </CardBody>
-          </Card>
-        </CardLink>
-      </CardContainer>
-    )
-  }
+const CardTitle = styled.h3`
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+`;
+
+const CardText = styled.p`
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  text-align: center;
+`;
+
+const ProjectCard = ({projectLink, title, text, image }) => (
+  <CardContainer>
+    <a href={projectLink}>
+    <CardImage src={image} alt={title} />
+    <CardBody>
+      <CardTitle>{title}</CardTitle>
+      <CardText>{text}</CardText>
+    </CardBody>
+    </a>
+  </CardContainer>
+);
+
 
 export default ProjectCard;

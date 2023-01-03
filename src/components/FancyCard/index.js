@@ -23,12 +23,12 @@ class Button extends React.Component {
     const { projectLink } = this.props;
     return (
       <div>
-      <CardButton 
+      <button 
         className="button button-primary"
         onClick={() => window.open(projectLink, '_blank')}
         >
         <i className="fa fa-chevron-right"></i> Link
-      </CardButton>
+      </button>
       </div>
     )
   }

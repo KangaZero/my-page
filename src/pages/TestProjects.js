@@ -5,13 +5,16 @@ import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from '../utils/ThemeContext';
 // components
-import { Card } from '../components/FancyCard';
+import ProjectCard  from '../components/ProjectCard';
 
 // images
 import holidayCalendar from '../images/holiday-calendar.png';
 import purrfection from '../images/purrfection.png';
-import darkBgV2 from '../images/dark-backgroundV2.png';
-import lightBg from '../images/light-background.png';
+import teamProfileGenerator from '../images/team-profile-generator.png';
+import weatherDashboard from '../images/weather-dashboard.png';
+import codingQuiz from '../images/coding-quiz.png';
+import workDayScheduler from '../images/work-day-scheduler.png';
+
 
 const cards = [
     {
@@ -32,8 +35,8 @@ const cards = [
     },
     {
       id: 3,
-      title: 'Card 3',
-      image: '/card3.jpg',
+      title: 'Profile Generator',
+      image: teamProfileGenerator,
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       date: '1/1/1970',
       projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
@@ -41,8 +44,8 @@ const cards = [
     },
     {
       id: 4,
-      title: 'Card 4',
-      image: '/card4.jpg',
+      title: 'Weather Dashboard',
+      image: weatherDashboard,
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       date: '1/1/1970',
       projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
@@ -50,8 +53,8 @@ const cards = [
     },
     {
       id: 5,
-      title: 'Card 5',
-      image: '/card4.jpg',
+      title: 'Coding Quiz',
+      image: codingQuiz,
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       date: '1/1/1970',
       projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
@@ -59,8 +62,8 @@ const cards = [
     },
     {
       id: 6,
-      title: 'Card 6',
-      image: '/card4.jpg',
+      title: 'Work Day Scheduler',
+      image: workDayScheduler,
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       date: '1/1/1970',
       projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
@@ -69,7 +72,7 @@ const cards = [
   ];
 
 
-function Projects() {
+const TestProjects = () => {
 
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -102,12 +105,11 @@ function Projects() {
     // className provided to center the Container div using bootstrap's CSS
     <CardContainer className ="mx-auto">
     {cards.map(card => (
-      <Card 
+      <ProjectCard 
         key={card.id}
         image={card.image}
         title={card.title}
         text={card.text}
-        date={card.date}
         projectLink={card.projectLink}
       />
     ))}
@@ -115,4 +117,4 @@ function Projects() {
   )
       }
 
-export default Projects;
+export default TestProjects;
