@@ -28,6 +28,7 @@ function About() {
   flex-direction: column;
   align-items: center;
   width: 80%;
+  height: 70.5vh;
   max-width: 800px;
   padding-top: 1rem;
   margin: 5vh auto;

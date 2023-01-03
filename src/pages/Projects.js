@@ -74,7 +74,7 @@ function Projects() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const darkMode = {
-    backgroundColor: `#12130c`,
+    backgroundColor: `#222`,
     color: '#D3D3D3'
   };
   
@@ -92,10 +92,8 @@ function Projects() {
   justify-text: space-between;
   width: 100%;
   height: 100vh;
-  margin: 0rem 2rem 1.5rem 2rem;
+  margin: 0rem 2rem;
   padding: 1rem 1rem;
-  ${'' /* TODO remove border once done */}
-  border: 1px solid;
   background-color: ${theme === 'light' ? darkMode.backgroundColor : lightMode.backgroundColor};
   color: ${theme === 'light' ? darkMode.color : lightMode.color};
 `;

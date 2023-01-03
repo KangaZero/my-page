@@ -17,7 +17,7 @@ import About from './pages/About';
 // import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
-// import Resume from './pages/Resume';
+import Resume from './pages/Resume';
 
 import {ThemeContext} from './utils/ThemeContext';
 
@@ -67,11 +67,11 @@ function App() {
                   {/* <Route 
                     path="/contact" 
                     element={<Contact />}
-                  />
+                  /> */}
                   <Route 
                     path="/resume" 
                     element={<Resume />}
-                  /> */}
+                  />
                 </Routes>        
               <Footer />
       </Router>

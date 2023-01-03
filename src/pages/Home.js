@@ -32,7 +32,8 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   ${'' /* Same height as About Page */}
-  height: 86.62vh;
+  height: 80.5vh;
+  ${'' /* height: 100%; */}
 `;
 
 const Stars = styled.div`
