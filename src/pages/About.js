@@ -37,7 +37,6 @@ function About() {
   
   @media (max-width: 768px) {
     width: 90%;
-    margin: 4vh auto 0 auto;
   }
 `;
 
@@ -78,18 +77,18 @@ const Description = styled.p`
   animation: fade-in 0.5s 0.4s forwards;
 `;
 
-// const GitHubLink = styled.a`
-//   display: flex;
-//   align-items: center;
-//   margin-top: 2rem;
-//   color: ${theme === 'light' ? '#888' : '#555'};
-//   text-decoration: none;
-//   transition: color 0.2s;
+const GitHubLink = styled.a`
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  color: ${theme === 'light' ? '#888' : '#555'};
+  text-decoration: none;
+  transition: color 0.2s;
 
-//   &:hover {
-//     color: ${theme === 'light' ? '#555' : '#888'};
-//   }
-// `;
+  &:hover {
+    color: ${theme === 'light' ? '#555' : '#888'};
+  }
+`;
 
 // Backgrounds
 const Stars = styled.div`
@@ -137,10 +136,10 @@ const Sky = styled.div`
       Hi there! My name is Samuel Wai Weng Yong, and I am a fullstack web developer. I am soon to be completing my bootcamp course at the end of January 2023. 
         I may be new to the world of web development, but I am always eager to learn and improve!
         </Description>
-        {/* <GitHubLink href="https://github.com/KangaZero">
+        <GitHubLink href="https://github.com/KangaZero">
             <FaGithub size={32} />
              GitHub
-          </GitHubLink> */}
+          </GitHubLink>
     </Container>
   );
 }
