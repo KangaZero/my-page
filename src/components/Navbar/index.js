@@ -11,6 +11,7 @@ import  logo  from '../../images/logo.png';
 
 const Navbar = () => {
     const location = useLocation();
+    // For Dark/Light Mode, uses global state
     const { theme, setTheme } = useContext(ThemeContext);
 
     const lightMode = {
@@ -30,6 +31,7 @@ const Navbar = () => {
             setTheme('light');
         }
     }
+
 
     const NavbarContainer = styled.div`
         display: flex;
@@ -67,7 +69,7 @@ const Navbar = () => {
             color: #fff;
         }
 `
-        const NavLinks = styled.div`
+    const NavLinks = styled.div`
             display: flex;
             align-items: center;
             margin: 1rem 0.5rem;
@@ -75,6 +77,14 @@ const Navbar = () => {
     a {
             margin: 0 1rem;
             text-decoration: none;
+    &:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s;
+    }
+    &:active {
+            transform: scale(1);
+            transition: transform 0.2s;
+        }
     }
 
     a[href='${location.pathname}'] {
@@ -82,6 +92,21 @@ const Navbar = () => {
     }
         
 `
+
+const NavbarImage = styled.img`
+    &:hover {
+    animation: spin-animation 2s linear infinite;
+    }
+
+    @keyframes spin-animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+`;
     // Styles the lightbulb fa-icon from it's default black colour to white
     const StyledLightbulb = styled(FaLightbulb)`
     color: white;
@@ -105,9 +130,9 @@ const Navbar = () => {
         }
     `;
 
-return (
+    return (
         <NavbarContainer>
-            <img className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
+            <NavbarImage className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
             <NavLinks>
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
@@ -119,7 +144,7 @@ return (
             {theme === 'light' ? <StyledLightbulb  />: <StyledMoon /> }
         </ThemeButton>
         </NavbarContainer>
-)
+    );
 };
 
 export default Navbar;
