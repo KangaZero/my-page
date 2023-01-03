@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { ThemeContext } from '../../utils/ThemeContext';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,7 @@ import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 
 const ProjectCard = ({projectLink, liveLink, title, text, image }) => {
 
+  // Theme
     const { theme, setTheme } = useContext(ThemeContext);
 
     const darkMode = {
@@ -23,6 +24,19 @@ const ProjectCard = ({projectLink, liveLink, title, text, image }) => {
       hoverColor: '#111'
   }
 
+  // Fade-in animation upon the page rendering
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    cardRef.current.classList.add('fade-in');
+  }, []);
+
+  // fade-in class the useEffect adds to the cardRef which is the CardContainer div
+  const fadeIn = css`
+    opacity: 1;
+  `;
+
+  // css styling for all tags used for the card component
 const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,7 +47,9 @@ const CardContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px ${theme === 'light' ? 'rgba(233, 233, 233, 0.1)' : 'rgba(0, 0, 0, 0.1)'};
+  opacity: 0;
+  transition: opacity 1s;
 
   @media (max-width: 900px) {
     margin: 1.5rem;
@@ -43,6 +59,16 @@ const CardContainer = styled.div`
     margin: 1.8rem;
     width: 500px;
 
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.7s;
+    box-shadow: 0 8px 12px ${theme === 'light' ? 'rgba(233, 233, 233, 0.2)' : 'rgba(0, 0, 0, 0.2)'};
+  }
+
+  &.fade-in {
+    ${fadeIn}
   }
 `;
 
@@ -78,17 +104,6 @@ const CardIcons = styled.div`
   padding: 1rem;
 `;
 
-// const Icon = styled.a`
-//   display: inline-block;
-//   width: 30px;
-//   height: 30px;
-//   background-color: #333;
-//   border-radius: 50%;
-//   text-align: center;
-//   line-height: 30px;
-//   color: #fff;
-// `;
-
 const Icon = styled(FontAwesomeIcon)`
   margin: 0 0.5rem;
   font-size: 1.5rem;
@@ -115,9 +130,8 @@ const Icon = styled(FontAwesomeIcon)`
   }
   `;
 
-
 return (
-  <CardContainer>
+  <CardContainer ref={cardRef}>
     <CardImage src={image} alt={title} />
     <CardBody>
       <CardTitle>{title}</CardTitle>
