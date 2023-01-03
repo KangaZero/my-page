@@ -69,12 +69,14 @@ const Title = styled.h1`
   font-size: 3rem;
   color: ${theme === 'light' ? '#D3D3D3' : '#333'};
   margin-bottom: 0.5rem;
+  font-family: Garamond;
 `;
 
 const Text = styled.p`
   font-size: 1.5rem;
   color: ${theme === 'light' ? '#D3D3D3' : '#333'};
   line-height: 1.5;
+  font-family: Futara;
 `;
 
   return (
