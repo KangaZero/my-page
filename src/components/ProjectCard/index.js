@@ -1,5 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import { useContext } from 'react';
+import { ThemeContext } from '../../utils/ThemeContext';
+import styled, { css } from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
+
+const ProjectCard = ({projectLink, liveLink, title, text, image }) => {
+
+    const { theme, setTheme } = useContext(ThemeContext);
+
+    const darkMode = {
+      backgroundColor: '#333',
+      hoverBackground: '#555',
+      color: '#D3D3D3',
+      hoverColor: '#E3D3D3'
+  }
+
+    const lightMode = {
+      backgroundColor: '#d8e8e6',
+      hoverBackground: '#f9f9ff',
+      color: '#333',
+      hoverColor: '#111'
+  }
 
 const CardContainer = styled.div`
   display: flex;
@@ -7,10 +29,21 @@ const CardContainer = styled.div`
   align-items: center;
   width: 300px;
   height: 400px;
+  margin: 2.8rem auto;
   border: 1px solid #ccc;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 900px) {
+    margin: 1.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 1.8rem;
+    width: 500px;
+
+  }
 `;
 
 const CardImage = styled.img`
@@ -40,17 +73,67 @@ const CardText = styled.p`
   text-align: center;
 `;
 
-const ProjectCard = ({projectLink, title, text, image }) => (
+const CardIcons = styled.div`
+  display: flex;
+  padding: 1rem;
+`;
+
+// const Icon = styled.a`
+//   display: inline-block;
+//   width: 30px;
+//   height: 30px;
+//   background-color: #333;
+//   border-radius: 50%;
+//   text-align: center;
+//   line-height: 30px;
+//   color: #fff;
+// `;
+
+const Icon = styled(FontAwesomeIcon)`
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin: 0.5rem;
+  }
+
+  ${props =>
+  props.github &&
+  css`
+    color: ${theme === 'light' ? '#888' : '#555'};
+  `}
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+
+  &:active {
+    transform: scale(1);
+    transition: transform 0.2s;
+  }
+  `;
+
+
+return (
   <CardContainer>
-    <a href={projectLink}>
     <CardImage src={image} alt={title} />
     <CardBody>
       <CardTitle>{title}</CardTitle>
       <CardText>{text}</CardText>
+      <CardIcons>
+        <a href={projectLink}>
+          <Icon icon={faGithub} github />
+        </a>
+        <a href={liveLink}>
+        <Icon icon={faNpm} github />
+        </a>
+      </CardIcons>
     </CardBody>
-    </a>
   </CardContainer>
-);
+)
+};
 
 
 export default ProjectCard;
