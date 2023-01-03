@@ -15,7 +15,7 @@ import Navbar from './components/Navbar';
 // Pages
 // import About from './pages/About';
 // import Contact from './pages/Contact';
-// import Home from './pages/Home';
+import Home from './pages/Home';
 import Projects from './pages/Projects';
 // import Resume from './pages/Resume';
 
@@ -52,11 +52,11 @@ function App() {
               {/* <Header /> */}
               <Navbar/>
                 <Routes>
-                {/* <Route 
+                <Route 
                     path="/"
                     element={<Home />}
                   />
-                  <Route 
+                  {/* <Route 
                     path="/about" 
                     element={<About />}
                   /> */}
