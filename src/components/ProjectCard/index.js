@@ -91,12 +91,14 @@ const CardTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
+  font-family: Garamond;
 `;
 
 const CardText = styled.p`
   margin: 1rem 0 0;
   font-size: 1rem;
   text-align: center;
+  font-family: Futara;
 `;
 
 const CardIcons = styled.div`
