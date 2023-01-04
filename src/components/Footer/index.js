@@ -105,7 +105,7 @@ const Footer = () => {
           <Icon icon={faLinkedin} linkedin />
         </a>
       </div>
-      <div className="copyright">&copy;  {new Date().getFullYear()} KangaZero</div>
+      <div className="copyright">&copy;  {new Date().getFullYear()} KangaWorks</div>
   </FooterContainer>
 );
 };

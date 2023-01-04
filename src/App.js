@@ -14,7 +14,7 @@ import Navbar from './components/Navbar';
 
 // Pages
 import About from './pages/About';
-// import Contact from './pages/Contact';
+import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
@@ -65,10 +65,10 @@ function App() {
                     path="/projects" 
                     element={<Projects />}
                   />
-                  {/* <Route 
+                  <Route 
                     path="/contact" 
                     element={<Contact />}
-                  /> */}
+                  />
                   <Route 
                     path="/resume" 
                     element={<Resume />}

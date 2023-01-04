@@ -150,7 +150,7 @@ const NavbarImage = styled.img`
                 <Link to="/about">About</Link>
                 <Link to="/resume">Resume</Link>
                 <Link to="/projects">Projects</Link>
-                <Link to="/contacts">Contacts</Link>
+                <Link to="/contact">Contact</Link>
             </NavLinks>
         <ThemeButton className="mx-4" onClick={toggleTheme}>
             {theme === 'light' ? <StyledLightbulb  />: <StyledMoon /> }

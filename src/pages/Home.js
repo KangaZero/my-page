@@ -16,13 +16,13 @@ function Home () {
 
   useEffect(() => {
     new Typed('.title', {
-      strings: ['Welcome to My Website'],
+      strings: ['Welcome to KangaWorks'],
       typeSpeed: 50
     });
 
     new Typed('.text', {
       strings: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non facilisis nisl. Donec aliquet mauris nibh, eget elementum nisi tempus sed. Aliquam erat volutpat.'
+        'This website is dedicated to showcase what I have learnt and built over the course of 6 months from a bootcamp course'
       ],
       typeSpeed: 10
     });
@@ -55,7 +55,6 @@ const Sky = styled.div`
   background-image: url(${lightBg});
   z-index: -1;
 `;
-
 
 const Content = styled.div`
   position: absolute;
