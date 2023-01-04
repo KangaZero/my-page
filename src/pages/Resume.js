@@ -19,29 +19,63 @@ const Resume = () => {
     
     ## Skills
     
-    - Strong foundation in computer science principles
-    - Proficiency in HTML, CSS, and JavaScript
     - Experience with modern web development frameworks and libraries such as React, Node.js, and Express
-    - Familiarity with server-side languages and frameworks such as Python and Django
+    - Confident in using backend server frameworks and middlewares such as Apollo Express, Sequelize, Mongoose and Express-GraphQL 
+    - Proficiency in HTML, CSS, and JavaScript, 
+    - Includes 3rd party libraries - Handlebars.js, Tailwind & Bootstrap CSS, and JQuery.
+    - Familiarity with database languages such as MySQL and MongoDB
+
+    - Strong customer service skills
+    - Experience in teaching and training others
+    - Excellent attention to detail
+    - Proficient in time management
+    - Adaptable to changing situations
+
+    ## Projects
+    
+    - Project 1: Implemented a search function for a web application that allows users to search for holidays and learn about their wikifacts using the built-in calendar widget.  
+      - Led and delegated a team to complete the project. 
+      - Utilized Node.js and Tailwind and implemented Wikipedia and Giphy APIs to provide dynamic content to users.
+      - (Visit here)[https://purrfection-pet-store.herokuapp.com/]
+      - (Github Repo)[https://github.com/KangaZero/purrfection]
+
+    - Project 2: Developed a fully-functional e-commerce platform for buying and selling pets online.
+      - My tasks: Included a user authentication system, backend API and seeding, profile page, and upload function feature.
+      - Utilized Handlebars, MySQL, Express, and Tailwind to create a visually appealing and user-friendly platform.
+      - (Visit here)[https://kangazero.github.io/holiday-calendar-discoverer/ ]
+      - (Github Repo)[https://github.com/KangaZero//holiday-calendar-discoverer]
     
     ## Education
     
-    - Bachelor of Arts, Major in Computer Science, 2019 - 2022
-    - 6-month coding bootcamp, 2022 July - 2023 January
+    - Bachelor of Arts, Major in Music and Japanese, 2019 - 2022
+    - Coding bootcamp for "FullStack Web Development", 2022 July - 2023 January
+
+    ## Certification
+
+    - JLPT N1 Certification (2019) - Demonstrated advanced proficiency in reading, writing, and understanding Japanese language and culture.
     
-    ## Projects
-    
-    - Project 1: A web application that allows users to search and book vacation rentals
-      - Technologies used: React, Node.js, Express, MongoDB
-      - Responsibilities: Implemented the search and booking functionality
-    - Project 2: A social media platform for pet owners
-      - Technologies used: Django, Python, PostgreSQL
-      - Responsibilities: Developed the backend API and implemented the user authentication system
-    
-    ## Personal Interests
-    
-    In my free time, I enjoy staying up to date with the latest developments in the tech industry and tinkering with new technologies. 
-    I am also an avid animal lover and enjoy spending time with my pets.
+    ## Languages
+
+     - English (Native)
+     - Japanese (Advanced)
+     - Malay (Conversational), 
+     - Mandarin Chinese (Lower-Intermediate)
+
+    ## Work Experience
+
+    - Food and Beverage Attendant 2019 October - 2021 December
+      - Interacted with customers to provide excellent service and resolve any issues that arose.
+         - Resolved customer complaint by offering a complimentary meal on their next visit.
+      - Managed time effectively to complete tasks and meet deadlines in a fast-paced environment.
+      - Adapted to changing situations and provided solutions to problems that arose.
+        - Quickly came up with an alternative when we ran out of a popular menu item.
+
+    - Freelance Piano Instructor 2019 - Present
+      - Communicated with students and parents to understand their needs and goals.
+      - Taught and trained students of all ages and skill levels in piano.
+        - Adapted teaching style to fit the needs and learning styles of individual students.
+      - Managed time effectively to plan and execute lessons, meet deadlines, and accommodate busy schedules.
+        - Prepared students for piano exams with tailored lesson plans and ample practice time.
     `;
     const language = 'markdown';
 

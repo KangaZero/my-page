@@ -18,7 +18,6 @@
     "dotenv": "^16.0.3",
     "font-awesome": "^4.7.0",
     "gh-pages": "^4.0.0",
-    "gsap": "^3.11.4",
     "install": "^0.13.0",
     "npm": "^9.2.0",
     "prismjs": "^1.29.0",
@@ -33,7 +32,6 @@
     "remark-react": "^9.0.1",
     "styled-components": "^5.3.6",
     "tailwindcss": "^3.1.8",
-    "three": "^0.148.0",
     "typed.js": "^2.0.12",
     "vite": "^4.0.3",
     "web-vitals": "^2.1.4"
@@ -69,7 +67,6 @@
     "autoprefixer": "^10.4.13",
     "eslint": "^8.31.0",
     "eslint-plugin-react": "^7.31.8",
-    "husky": "^8.0.1",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4"
   }

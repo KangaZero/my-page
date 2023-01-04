@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../utils/ThemeContext';
 
 import darkBgV2 from '../images/dark-backgroundV2.png';
@@ -91,7 +90,7 @@ const Contact = () => {
       }
 };
 
-  const Form = styled.form`
+const Form = styled.form`
     display: flex; 
     flex-direction: column; 
     align-items: start;
@@ -203,7 +202,7 @@ const Sky = styled.div`
 `;
 
   return (
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={e => handleSubmit(e)}>
         {theme === 'light' && <Stars />}
         {theme !== 'light' && <Sky />}
         <Label htmlFor='name'>Name:  {nameError && <Error>{nameError}</Error>} </Label>
