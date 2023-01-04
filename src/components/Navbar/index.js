@@ -149,7 +149,10 @@ const NavbarImage = styled.img`
     return (
         <NavbarContainer>
             <audio src={smoTheme} id="hover-sound"/>
-            <NavbarImage onMouseEnter={()=>document.getElementById('hover-sound').play()} className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
+            <NavbarImage 
+            onMouseEnter={()=>document.getElementById('hover-sound').play()}
+            onMouseLeave={() =>document.getElementById('hover-sound').pause()} 
+            className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
             <NavLinks>
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
