@@ -36,28 +36,60 @@ const Contact = () => {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
 
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+
   const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
   const phoneRegex = /^\+?\d{1,3}[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+   e.preventDefault();
+  
+   // validation
+   setNameError('');
+   setEmailError('');
+   setPhoneError('');
 
-    // validation
-    if (!name) {
-      return alert('Name field is required');
-    }
-    if (!email && !phone) {
-      return alert('Email or phone field is required');
-    }
-    if (email && !emailRegex.test(email)) {
-      return alert('Invalid email format');
-    }
-    if (phone && !phoneRegex.test(phone)) {
-      return alert('Invalid phone format');
-    }
+   if (!name) {
+     setNameError('This field is required');
+   }
+   if (!email && !phone) {
+     setEmailError('Either email or phone is required');
+     setPhoneError('Either email or phone is required');
+   }
+   if (email && !emailRegex.test(email)) {
+     setEmailError('Invalid email format');
+   }
+   if (phone && !phoneRegex.test(phone)) {
+     setPhoneError('Invalid phone format');
+   }
 
-    // send form data to server or backend
-  };
+   if (nameError || emailError || phoneError) {
+     // there was an error, do not submit form
+     return;
+   }
+
+   // send form data to server or backend
+   const response = await fetch('/api/contact', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+     },
+     body: JSON.stringify({ name, email, phone, message }),
+   });
+
+   if (response.ok) {
+     // form was successfully submitted
+     setName('');
+     setEmail('');
+     setPhone('');
+     setMessage('');
+   } else {
+        // there was an error
+        alert('An error occurred while submitting the form');
+      }
+};
 
   const Form = styled.form`
     display: flex; 
@@ -84,6 +116,11 @@ const Label = styled.label`
    @media (max-width: 768px) { 
     margin: 0.5rem 0 0;
    }
+`;
+
+const Error = styled.span`
+  color: red;
+  font-size: 0.9rem;
 `;
 
 const Input = styled.input`
@@ -128,7 +165,6 @@ const Button = styled.button`
    }
 
 
-
     &:hover {
         background-color: ${theme === 'light' ? lightMode.hoverBackground : darkMode.hoverBackground};
         color: ${theme === 'light' ? '#D3D3D3' : '#333'};
@@ -166,21 +202,20 @@ const Sky = styled.div`
   }
 `;
 
-
   return (
-    <Form onSubmit={handleSubmit}>
-     {theme === 'light' && <Stars />}
-     {theme !== 'light' && <Sky />}
-      <Label htmlFor='name'>Name:</Label>
-        <Input type='text' id='name' value={name} onChange={e => setName(e.target.value)} required />
-      <Label htmlFor='email'>Email:</Label>
-        <Input type='email' id='email' value={email} onChange={e => setEmail(e.target.value)} />
-      <Label htmlFor='phone'>Phone:</Label>
-        <Input type='tel' id='phone' value={phone} onChange={e => setPhone(e.target.value)} />
-      <Label htmlFor='message'>Message:</Label>
-        <Textarea id='message' value={message} onChange={e => setMessage(e.target.value)} />
-      <Button type='submit'>Send</Button>
-    </Form>
+        <Form onSubmit={handleSubmit}>
+        {theme === 'light' && <Stars />}
+        {theme !== 'light' && <Sky />}
+        <Label htmlFor='name'>Name:  {nameError && <Error>{nameError}</Error>} </Label>
+            <Input type='text' id='name' value={name} onChange={e => setName(e.target.value)} required />
+        <Label htmlFor='email'>Email: {emailError && <Error>{emailError}</Error>}</Label>
+            <Input type='email' id='email' value={email} onChange={e => setEmail(e.target.value)} />
+        <Label htmlFor='phone'>Phone: {phoneError && <Error>{phoneError}</Error>}</Label>
+            <Input type='tel' id='phone' value={phone} onChange={e => setPhone(e.target.value)} />
+        <Label htmlFor='message'>Message:</Label>
+            <Textarea id='message' value={message} onChange={e => setMessage(e.target.value)} />
+        <Button type='submit'>Send</Button>
+        </Form>
     );
 };
 
