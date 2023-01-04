@@ -154,7 +154,7 @@ const NavbarImage = styled.img`
             onMouseLeave={() =>document.getElementById('hover-sound').pause()} 
             className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
             <NavLinks>
-                <Link to="/">Home</Link>
+                <Link to="/my-page">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/resume">Resume</Link>
                 <Link to="/projects">Projects</Link>
