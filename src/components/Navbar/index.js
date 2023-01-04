@@ -4,9 +4,12 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../utils/ThemeContext';
 import { FaMoon, FaLightbulb} from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
+import { audio } from 'react-dom';
 
 // logo
 import  logo  from '../../images/logo.png';
+// audio
+import smoTheme from '../../audio/SMO-theme.mp3';
 
 
 const Navbar = () => {
@@ -108,6 +111,7 @@ const Navbar = () => {
 const NavbarImage = styled.img`
     &:hover {
     animation: spin-animation 2s linear infinite;
+    document.getElementById('hover-sound').play();
     }
 
     @keyframes spin-animation {
@@ -144,7 +148,8 @@ const NavbarImage = styled.img`
 
     return (
         <NavbarContainer>
-            <NavbarImage className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
+            <audio src={smoTheme} id="hover-sound"/>
+            <NavbarImage onMouseEnter={()=>document.getElementById('hover-sound').play()} className="mx-4" src={logo} alt="Logo" style={{ height: 58, width: 58 }}  />
             <NavLinks>
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
