@@ -2,7 +2,7 @@
   "name": "my-page",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://kangazero.github.io/my-page",
+  "homepage": "https://kangazero.github.io/",
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
