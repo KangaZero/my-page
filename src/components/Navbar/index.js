@@ -50,6 +50,7 @@ const Navbar = () => {
         @media only screen and (max-width: 768px) {
             flex-direction:column;
             justify-content: start;
+
         }
          
          &:hover {
@@ -89,9 +90,17 @@ const Navbar = () => {
             align-items: center;
             margin: 1rem 0.5rem;
 
+            @media only screen and (max-width: 768px) {
+            ${'' /* flex-direction:column; */}
+        }
+
     a {
             margin: 0 1rem;
             text-decoration: none;
+
+            @media only screen and (max-width: 768px) {
+            ${'' /* margin: 0.5rem 0; */}
+        }
     &:hover {
             transform: scale(1.1);
             transition: transform 0.2s;
