@@ -23,7 +23,7 @@ const cards = [
       title: 'Pet Nanny',
       image: petNanny,
       text: 'Want a holiday? But who will take care of my pet? We will!',
-      projectLink: 'https://github.com/mecuboi/pet-nanny',
+      projectLink: 'https://github.com/KangaZero/pet-nanny',
       liveLink: 'https://pet-nanny-msc.herokuapp.com/'
     },
     {
@@ -31,7 +31,7 @@ const cards = [
       title: 'Holiday Calendar',
       image: holidayCalendar,
       text: 'Wiki facts about holidays you pick from our calendar',
-      projectLink: 'https://kangazero.github.io/holiday-calendar-discoverer/',
+      projectLink: 'https://github.com/KangaZero/holiday-calendar-discoverer',
       liveLink: 'https://kangazero.github.io/holiday-calendar-discoverer/'
     },
     {

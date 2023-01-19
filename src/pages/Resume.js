@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { ThemeContext } from '../utils/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faCopy } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCopy, faDownload } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import Clipboard from 'clipboard';
 
 
-const Resume = () => {
+export default function Resume() {
     // For dark/light mode
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -42,8 +42,17 @@ const Resume = () => {
     - Project 2: Developed a fully-functional e-commerce platform for buying and selling pets online.
       - My tasks: Included a user authentication system, backend API and seeding, profile page, and upload function feature.
       - Utilized Handlebars, MySQL, Express, and Tailwind to create a visually appealing and user-friendly platform.
-      - (Visit here)[https://kangazero.github.io/holiday-calendar-discoverer/ ]
+      - (Visit here)[https://kangazero.github.io/holiday-calendar-discoverer/]
       - (Github Repo)[https://github.com/KangaZero//holiday-calendar-discoverer]
+
+    - Project 3: A MERN full stack application to book and find petsitters.
+      - My tasks: Implemented the user profile page, update user form and update profile picture form. 
+        Created backend skeleton which includes seeding, models, schema, queries and mutations.
+      - Ultilized MongoDB, Bootstrap-React, JWT, GraphQL and React to manage data, design responsive interfaces, 
+        handle secure user authentication and authorization, handle efficient data retrieval and manipulation and create dynamic user experience.
+      - (Visit here)[https://pet-nanny-msc.herokuapp.com/]
+      - (Github Repo)[https://github.com/KangaZero/pet-nanny]
+
     
     ## Education
     
@@ -128,7 +137,7 @@ const CodeSnippetPre = styled.pre`
 
 const CodeSnippetButton = styled.button`
   display: block;
-  margin: 1rem 1rem 1rem auto;
+  margin: 1rem auto;
   padding: 0.5rem 1rem;
   border: none;
   background-color: #555;
@@ -175,11 +184,31 @@ const CopyButton = ({ code }) => {
     };
   }, [code]);
 
+ 
+    const [downloadUrl, setDownloadUrl] = useState('');
+    const [downloaded, setDownloaded] = useState(false);
+    
+    // const downloadResume = async () => {
+    //   const response = await fetch('https://example.com/resume.pdf');
+    //   const blob = await response.blob();
+    //   setDownloadUrl(URL.createObjectURL(blob));
+    // }
+
   return (
+    <div className='d-flex'>
     <CodeSnippetButton ref={buttonRef} type="button">
       <FontAwesomeIcon className="mx-2" icon={copied ? faCheckCircle : faCopy} />
       <ButtonText>{copied ? 'Copied!' : 'Copy code'}</ButtonText>
     </CodeSnippetButton>
+  
+    <CodeSnippetButton type="button">
+        <FontAwesomeIcon className="mx-2" icon={downloaded ? faCheckCircle : faDownload} />
+        <ButtonText>{downloaded ? 'Downloaded!' : 'Download'}</ButtonText>
+      </CodeSnippetButton>
+      <a href={downloadUrl} download="resume.pdf" hidden={!downloadUrl} onClick={() => setDownloaded(true)} onLoad={() => setDownloaded(true)}>
+      </a>
+
+    </div>
   );
 };
 
@@ -194,4 +223,4 @@ const CopyButton = ({ code }) => {
     );
 };
 
-export default Resume;
+// export default Resume;

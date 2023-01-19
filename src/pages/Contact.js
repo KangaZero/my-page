@@ -42,6 +42,15 @@ const Contact = () => {
   const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
   const phoneRegex = /^\+?\d{1,3}[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
 
+  // Only accept digits for the phone input field
+  const handlePhoneChange = (e) => {
+    const phoneNumber = e.target.value;
+    const isPhoneNumber = /^\d+$/.test(phoneNumber);
+    if (isPhoneNumber) {
+      setPhone(phoneNumber);
+    }
+  };
+
   const handleSubmit = async (e) => {
    e.preventDefault();
   
@@ -202,7 +211,8 @@ const Sky = styled.div`
 `;
 
   return (
-        <Form onSubmit={e => handleSubmit(e)}>
+    <div>
+        <Form onSubmit={handleSubmit}>
         {theme === 'light' && <Stars />}
         {theme !== 'light' && <Sky />}
         <Label htmlFor='name'>Name:  {nameError && <Error>{nameError}</Error>} </Label>
@@ -210,11 +220,12 @@ const Sky = styled.div`
         <Label htmlFor='email'>Email: {emailError && <Error>{emailError}</Error>}</Label>
             <Input type='email' id='email' value={email} onChange={e => setEmail(e.target.value)} />
         <Label htmlFor='phone'>Phone: {phoneError && <Error>{phoneError}</Error>}</Label>
-            <Input type='tel' id='phone' value={phone} onChange={e => setPhone(e.target.value)} />
+            <Input type='tel' id='phone' value={phone} onChange={handlePhoneChange} />
         <Label htmlFor='message'>Message:</Label>
             <Textarea id='message' value={message} onChange={e => setMessage(e.target.value)} />
         <Button type='submit'>Send</Button>
         </Form>
+    </div>
     );
 };
 
