@@ -14,9 +14,18 @@ import teamProfileGenerator from '../images/team-profile-generator.png';
 import weatherDashboard from '../images/weather-dashboard.png';
 import codingQuiz from '../images/coding-quiz.png';
 import workDayScheduler from '../images/work-day-scheduler.png';
+import petNanny from '../images/pet-nanny.png';
 
 
 const cards = [
+    {
+      id: 7,
+      title: 'Pet Nanny',
+      image: petNanny,
+      text: 'Want a holiday? But who will take care of my pet? We will!',
+      projectLink: 'https://github.com/mecuboi/pet-nanny',
+      liveLink: 'https://pet-nanny-msc.herokuapp.com/'
+    },
     {
       id: 1,
       title: 'Holiday Calendar',

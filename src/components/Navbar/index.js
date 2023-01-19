@@ -47,11 +47,11 @@ const Navbar = () => {
         color: ${theme === 'light' ? lightMode.color : darkMode.color};
         width: 100%;
 
-        @media only screen and (max-width: 768px) {
+        ${'' /* @media only screen and (max-width: 768px) {
             flex-direction:column;
             justify-content: start;
 
-        }
+        } */}
          
          &:hover {
             background-color: ${theme === 'light' ? lightMode.hoverBackground : darkMode.hoverBackground};
@@ -91,7 +91,7 @@ const Navbar = () => {
             margin: 1rem 0.5rem;
 
             @media only screen and (max-width: 768px) {
-            ${'' /* flex-direction:column; */}
+                display: none;
         }
 
     a {
@@ -116,6 +116,43 @@ const Navbar = () => {
     }
         
 `
+
+const NavbarDropdown = styled.div`
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+`;
+
+const NavDropdownButton = styled.button`
+  display: none;
+  @media only screen and (max-width: 768px) {
+    display: block;
+    border-radius: 20%;
+    padding: 2px 5px;
+    border: none;
+    background: none;
+  }
+
+  &:hover {
+    background-color: #555;
+    color: #fff;
+  }
+
+  &:active {
+    background-color: #333;
+    color: #fff;
+  }
+`;
+
+const NavDropdownLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 769px) {
+    display: none;
+  }
+`;
 
 const NavbarImage = styled.img`
     &:hover {
