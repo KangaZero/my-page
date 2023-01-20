@@ -203,12 +203,18 @@ const CopyButton = ({ code }) => {
       <FontAwesomeIcon className="mx-2" icon={copied ? faCheckCircle : faCopy} />
       <ButtonText>{copied ? 'Copied!' : 'Copy code'}</ButtonText>
     </CodeSnippetButton>
-  
+    
+    <a 
+    href={downloadUrl} 
+    download={downloadUrl} 
+    hidden={!downloadUrl} 
+    onClick={() => setDownloaded(true)} 
+    onLoad={() => setDownloaded(true)}
+    className="mx-auto">
     <CodeSnippetButton type="button">
         <FontAwesomeIcon className="mx-2" icon={downloaded ? faCheckCircle : faDownload} />
         <ButtonText>{downloaded ? 'Downloaded!' : 'Download'}</ButtonText>
       </CodeSnippetButton>
-      <a href={downloadUrl} download="resume.pdf" hidden={!downloadUrl} onClick={() => setDownloaded(true)} onLoad={() => setDownloaded(true)}>
       </a>
 
     </div>
