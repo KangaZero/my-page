@@ -7,6 +7,8 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import Clipboard from 'clipboard';
 
+import Resume2023 from '../files/Resume 2023.pdf';
+
 
 export default function Resume() {
     // For dark/light mode
@@ -15,7 +17,8 @@ export default function Resume() {
     const code = `
     # RESUME
   
-    I am a full stack web developer with a Bachelor of Arts degree from 2019 to 2022 and a 6-month coding bootcamp under my belt.
+    I am a full-stack web developer with experience in modern frameworks such as React, Node.js and Express. 
+    Strong in customer service, teaching and time management. I speak multiple languages and hold JLPT N1 Certification.
     
     ## Skills
     
@@ -74,7 +77,7 @@ export default function Resume() {
 
     - Food and Beverage Attendant 2019 October - 2021 December
       - Interacted with customers to provide excellent service and resolve any issues that arose.
-         - Resolved customer complaint by offering a complimentary meal on their next visit.
+         - Resolved customer complaints by offering a complimentary meal on their next visit.
       - Managed time effectively to complete tasks and meet deadlines in a fast-paced environment.
       - Adapted to changing situations and provided solutions to problems that arose.
         - Quickly came up with an alternative when we ran out of a popular menu item.
@@ -184,8 +187,8 @@ const CopyButton = ({ code }) => {
     };
   }, [code]);
 
- 
-    const [downloadUrl, setDownloadUrl] = useState('');
+  //  change downloadURL to useState if fetching an API
+    const downloadUrl = Resume2023;
     const [downloaded, setDownloaded] = useState(false);
     
     // const downloadResume = async () => {
