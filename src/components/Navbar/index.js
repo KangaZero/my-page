@@ -47,11 +47,11 @@ const Navbar = () => {
         color: ${theme === 'light' ? lightMode.color : darkMode.color};
         width: 100%;
 
-        ${'' /* @media only screen and (max-width: 768px) {
-            flex-direction:column;
+        @media only screen and (max-width: 768px) {
+            flex-direction: column;
             justify-content: start;
 
-        } */}
+        }
          
          &:hover {
             background-color: ${theme === 'light' ? lightMode.hoverBackground : darkMode.hoverBackground};
@@ -90,9 +90,9 @@ const Navbar = () => {
             align-items: center;
             margin: 1rem 0.5rem;
 
-            @media only screen and (max-width: 768px) {
+            ${'' /* @media only screen and (max-width: 768px) {
                 display: none;
-        }
+        } */}
 
     a {
             margin: 0 1rem;
