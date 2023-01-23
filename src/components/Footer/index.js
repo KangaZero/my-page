@@ -95,13 +95,13 @@ const Footer = () => {
   return (
     <FooterContainer>
       <div>
-        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/KangaZero" target="_blank" rel="noopener noreferrer">
           <Icon icon={faGithub} github />
         </a>
         <a href="https://instagram.com/username" target="_blank" rel="noopener noreferrer">
           <Icon icon={faInstagram} instagram />
         </a>
-        <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/samuel-yong-4a6874194/" target="_blank" rel="noopener noreferrer">
           <Icon icon={faLinkedin} linkedin />
         </a>
       </div>
